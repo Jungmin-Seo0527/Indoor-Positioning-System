@@ -1,0 +1,4 @@
+import ESTIMATING_POSITION_temp_for_inputing
+import inputing
+
+print(ESTIMATING_POSITION_temp_for_inputing.ESTIMATINGPOSITIONBYINPUT(inputing.inputing(31,13,2)))
