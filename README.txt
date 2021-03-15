@@ -1,6 +1,6 @@
 # Indoor positioning system
 
-* 실행 : pyqt_practice.py 실행
+* 프로그램 전체 실행 : pyqt_practice.py 실행!!!
 =========================================================
 러닝 하는 모습을 보여준다 => 0_TRAIN_TENSOR 실행 
 
