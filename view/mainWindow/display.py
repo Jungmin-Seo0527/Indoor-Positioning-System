@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import math
 from matplotlib import colors
 
-xy1=np.loadtxt('forprint1.csv',delimiter=',',dtype=np.float64)
-xy2=np.loadtxt('forprint2.csv',delimiter=',',dtype=np.float64)
+xy1=np.loadtxt('../displayCase/csvFiles/forprint1.csv',delimiter=',',dtype=np.float64)
+xy2=np.loadtxt('../displayCase/csvFiles/forprint2.csv',delimiter=',',dtype=np.float64)
 cmap = colors.ListedColormap(['honeydew','mistyrose','lightgray','yellow'])
 
 def first_floor() :

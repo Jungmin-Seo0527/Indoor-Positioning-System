@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import style
 
-map1= np.loadtxt('txt2py_map_1_data_case1_for_map.txt',delimiter=',',skiprows=1,dtype='float32')
-map2= np.loadtxt('txt2py_map_2_data_case1_for_map.txt',delimiter=',',skiprows=1,dtype='float32')
+map1= np.loadtxt('view/visualizeMap/dataCaseForMap/txt2py_map_1_data_case1_for_map.txt',delimiter=',',skiprows=1,dtype='float32')
+map2= np.loadtxt('view/visualizeMap/dataCaseForMap/txt2py_map_2_data_case1_for_map.txt',delimiter=',',skiprows=1,dtype='float32')
 
 ############################################ 이거사용!!!!!!!!!!!!!!!!!
 ###print(map1[:][0]) # 이건 xyz

@@ -3,8 +3,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import matplotlib.pylab as plt
 
-
-def silsun():
+def showCurrentPosition(XXX,YYY,ZZZ):
     fig = plt.figure(figsize=(10, 5))
     ax = fig.add_subplot(111, projection='3d') # Axe3D object
 
@@ -12,8 +11,6 @@ def silsun():
     y1= [0,0]
     z1 = [0,0]
     ax.plot(x1, y1, z1,'k')
-
-
 
     x2 = [0,42]
     y2 = [24,24]
@@ -335,12 +332,46 @@ def silsun():
     ax.plot(x43_3, y43_3, z43_3,'k--')
 
     ##이제 센서 위치 점찍기
+
     x=[4.5,13.5,28.5,37.5,4.5,13.5,28.5,37.5,21,4.5,13.5,28.5,37.5,4.5,13.5,28.5,37.5,21]
     y=[4.5,4.5,4.5,4.5,19.5,19.5,19.5,19.5,12,4.5,4.5,4.5,4.5,19.5,19.5,19.5,19.5,12]
     z=[2.9,2.9,2.9,2.9,2.9,2.9,2.9,2.9,2.9,5.9,5.9,5.9,5.9,5.9,5.9,5.9,5.9,5.9]
     ax.scatter(x,y,z,c='red',s=50)
-    #면 그리기
 
+    #졸라맨 그리기
+    #머리
+    xp = [XXX]
+    yp = [YYY]
+    zp = [ZZZ+0.5]
+    ax.scatter(xp,yp,zp,c='blue',s=150)
+    #몸
+    xp_m=[XXX,XXX]
+    yp_m=[YYY,YYY]
+    zp_m=[ZZZ+0.5-0.5,ZZZ+0.5]
+    ax.plot(xp_m, yp_m, zp_m,'b')
+    #왼팔
+    xp_LH=[XXX-0.9, XXX]
+    yp_LH=[YYY,YYY]
+    zp_LH=[ZZZ+0.5-0.5+0.2+0.2+0.06, ZZZ+0.5-0.5+0.2+0.06]
+    ax.plot(xp_LH, yp_LH, zp_LH,'b')
+    #오른팔
+    xp_RH=[XXX+0.9, XXX]
+    yp_RH=[YYY,YYY]
+    zp_RH=[ZZZ+0.5-0.5+0.2+0.2+0.06, ZZZ+0.5-0.5+0.2+0.06]
+    ax.plot(xp_RH, yp_RH, zp_RH,'b')
+    #오른발
+    xp_RL=[XXX+0.7, XXX]
+    yp_RL=[YYY,YYY]
+    zp_RL=[ZZZ+0.5-0.5-0.5, ZZZ+0.5-0.5]
+    ax.plot(xp_RL, yp_RL, zp_RL,'b')
+    #왼
+    xp_LL=[XXX-0.7, XXX]
+    yp_LL=[YYY,YYY]
+    zp_LL=[ZZZ+0.5-0.5-0.5, ZZZ+0.5-0.5]
+    ax.plot(xp_LL, yp_LL, zp_LL,'b')
+
+
+    #면 그리기
 
     for i in np.arange(18,24,0.3):
         a=[i,i]
@@ -369,7 +400,6 @@ def silsun():
     ##    ax.plot(a, b, c,'k--')
     plt.xlim(0,42)
     plt.ylim(0,24)
-    plt.title("structure")
+    plt.title("ax.plot")
     plt.show()
     ##가운데 2층 흐릿하게 색칠할수있을까??
-
