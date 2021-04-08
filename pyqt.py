@@ -7,14 +7,14 @@ from PIL import Image
 import reloading_func
 
 #image들 연결
-img=Image.open("한층의평면도.jpg")
+img=Image.open("image/한층의평면도.jpg")
 ##img2=Image.open("건물구조.jpg")
-img3=Image.open("model.png")
-case1=Image.open("case1.png")
-case2=Image.open("case2.png")
-case3=Image.open("case3.png")
-case4=Image.open("case4.png")
-case5=Image.open("case5.png")
+img3=Image.open("image/model.png")
+case1=Image.open("image/case1.png")
+case2=Image.open("image/case2.png")
+case3=Image.open("image/case3.png")
+case4=Image.open("image/case4.png")
+case5=Image.open("image/case5.png")
 
 
 #UI파일 연결

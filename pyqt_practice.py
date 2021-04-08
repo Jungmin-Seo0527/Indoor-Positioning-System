@@ -20,32 +20,32 @@ import math
 from matplotlib import colors
 
 # image들 연결
-img = Image.open("cost.png")
+img = Image.open("image/cost.PNG")
 ##img2=Image.open("건물구조.jpg")
-img3 = Image.open("model.jpg")
-case1 = Image.open("case1.png")
-case2 = Image.open("case2.png")
-case3 = Image.open("case3.png")
-case4 = Image.open("case4.png")
-case5 = Image.open("case5.png")
+img3 = Image.open("image/model.jpg")
+case1 = Image.open("image/case1.png")
+case2 = Image.open("image/case2.png")
+case3 = Image.open("image/case3.png")
+case4 = Image.open("image/case4.png")
+case5 = Image.open("image/case5.png")
 
 # UI파일 연결
-form_class = uic.loadUiType("1.ui")[0]
-form_class2 = uic.loadUiType("chang.ui")[0]
+form_class = uic.loadUiType("ui/1.ui")[0]
+form_class2 = uic.loadUiType("ui/chang.ui")[0]
 # form_class2_2= uic.loadUiType("2-2.ui")[0]
-form_class3 = uic.loadUiType("33.ui")[0]
-form_class3_2 = uic.loadUiType("33-2.ui")[0]
-form_class3_3 = uic.loadUiType("33-3.ui")[0]
-form_class3_4 = uic.loadUiType("33-4.ui")[0]
-form_class3_5 = uic.loadUiType("33-5.ui")[0]
-form_class4 = uic.loadUiType("44.ui")[0]
-form_class4_2 = uic.loadUiType("44-2.ui")[0]
-form_class4_3 = uic.loadUiType("44-3.ui")[0]
-form_class4_4 = uic.loadUiType("44-4.ui")[0]
-form_class4_5 = uic.loadUiType("44-5.ui")[0]
-form_class5 = uic.loadUiType("5.ui")[0]
-form_class6 = uic.loadUiType("6.ui")[0]
-form_class6_2 = uic.loadUiType("6-2.ui")[0]
+form_class3 = uic.loadUiType("ui/33.ui")[0]
+form_class3_2 = uic.loadUiType("ui/33-2.ui")[0]
+form_class3_3 = uic.loadUiType("ui/33-3.ui")[0]
+form_class3_4 = uic.loadUiType("ui/33-4.ui")[0]
+form_class3_5 = uic.loadUiType("ui/33-5.ui")[0]
+form_class4 = uic.loadUiType("ui/44.ui")[0]
+form_class4_2 = uic.loadUiType("ui/44-2.ui")[0]
+form_class4_3 = uic.loadUiType("ui/44-3.ui")[0]
+form_class4_4 = uic.loadUiType("ui/44-4.ui")[0]
+form_class4_5 = uic.loadUiType("ui/44-5.ui")[0]
+form_class5 = uic.loadUiType("ui/5.ui")[0]
+form_class6 = uic.loadUiType("ui/6.ui")[0]
+form_class6_2 = uic.loadUiType("ui/6-2.ui")[0]
 
 
 # Class 선언
