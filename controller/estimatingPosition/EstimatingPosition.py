@@ -2,7 +2,8 @@
 # cross entropy
 import tensorflow as tf
 import numpy as np
-import module2
+
+from controller import module2
 
 
 class EstimatingPosition:

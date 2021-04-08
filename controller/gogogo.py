@@ -1,5 +1,4 @@
 
-import ESTIMATINGSIGNAL
 
 import math
 from mpl_toolkits.mplot3d import axes3d
@@ -7,12 +6,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import style
 #import xyz
-from controller import nanopower
+from controller import nanopower, EstimatingSignal
 
 
 def play(x,y,z):
     #print(nanopower.making_nanopower(ESTIMATINGSIGNAL.estimating_signal(28,11,5)))
-    power=nanopower.making_nanopower(ESTIMATINGSIGNAL.estimating_signal(x,y,z))
+    power=nanopower.making_nanopower(EstimatingSignal.estimating_signal(x, y, z))
  #   pos= xyz.xyz(x,y,z)
 
     map1 = np.array([[4.5,19.5,power[0]],

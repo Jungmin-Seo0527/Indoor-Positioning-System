@@ -3,12 +3,10 @@ from PyQt5.QtWidgets import *
 from PyQt5 import uic
 from PIL import Image
 
-import estimateTest
 
 import webbrowser
 
-import watch_where_func
-from controller import gogogo, ESTIMATING_POSITION_temp_for_inputing, mola, inputing, ESTIMATINGSIGNAL
+from controller import gogogo, EstimatingPositionForInput, mola, Inputing, EstimatingSignal, watch_where_func
 from controller.estimatingPosition.EstimatingPosition import EstimatingPosition
 from controller.showCurrentPosition import showCurrentPosition
 from view.mainWindow.DisplayBuildingStructure import DisplayBuildingStructure
@@ -228,7 +226,7 @@ class TestCase6(QMainWindow, uic.loadUiType("ui/testCase6_1.ui")[0]):
 
     def btn2func(self):  # DNN을 이용하여 예상 한 값
         # print(estimateTest.ESTIMATINGPOSITIONBYINPUT(inputing.inputing(x, y, z)))
-        print(ESTIMATING_POSITION_temp_for_inputing.ESTIMATINGPOSITIONBYINPUT((inputing.inputing(x, y, z))))
+        print(EstimatingPositionForInput.ESTIMATINGPOSITIONBYINPUT((Inputing.inputing(x, y, z))))
 
     def btn3func(self):  # Q-Learning environmet 보기
         watch_where_func.watching(mola.look_structure_position(x, y, z))

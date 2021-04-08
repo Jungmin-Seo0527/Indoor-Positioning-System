@@ -1,6 +1,0 @@
-model_checkpoint_path: "train_test_kal22.ckpt"
-all_model_checkpoint_paths: "train_test_kal22.ckpt-4"
-all_model_checkpoint_paths: "train_test_kal22.ckpt-200"
-all_model_checkpoint_paths: "train_test_kal22.ckpt-500"
-all_model_checkpoint_paths: "train_test_kal22.ckpt-999"
-all_model_checkpoint_paths: "train_test_kal22.ckpt"
