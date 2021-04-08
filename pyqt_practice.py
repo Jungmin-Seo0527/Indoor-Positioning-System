@@ -1,121 +1,19 @@
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
-from PyQt5.QtGui import QPixmap
-from PyQt5.QtCore import Qt
 from PIL import Image
-import ESTIMATINGSIGNAL
-import inputing
-import reloading_func
-import ESTIMATING_POSITION_temp_for_inputing
-import watch_where_func
-import mola
-import webbrowser
-import gogogo
-import nanopower
-import inputQlearning
-import random as rand
-import matplotlib.pyplot as plt
-import math
-from matplotlib import colors
 
+import estimateTest
+
+import webbrowser
+
+import watch_where_func
+from controller import gogogo, ESTIMATING_POSITION_temp_for_inputing, mola, inputing, ESTIMATINGSIGNAL
 from controller.estimatingPosition.EstimatingPosition import EstimatingPosition
 from controller.showCurrentPosition import showCurrentPosition
 from view.mainWindow.DisplayBuildingStructure import DisplayBuildingStructure
 from view.mainWindow.silsun import silsun
 from view.visualizeMap.VisualizeMap import VisualizeMap
-
-# form_class = uic.loadUiType("ui/MainWindow.ui")[0]
-form_class2 = uic.loadUiType("ui/chang.ui")[0]
-# form_class2_2= uic.loadUiType("2-2.ui")[0]
-form_class3 = uic.loadUiType("ui/testCase1.ui")[0]
-form_class3_2 = uic.loadUiType("ui/33-2.ui")[0]
-form_class3_3 = uic.loadUiType("ui/33-3.ui")[0]
-form_class3_4 = uic.loadUiType("ui/33-4.ui")[0]
-form_class3_5 = uic.loadUiType("ui/33-5.ui")[0]
-form_class4 = uic.loadUiType("ui/44.ui")[0]
-form_class4_2 = uic.loadUiType("ui/44-2.ui")[0]
-form_class4_3 = uic.loadUiType("ui/44-3.ui")[0]
-form_class4_4 = uic.loadUiType("ui/44-4.ui")[0]
-form_class4_5 = uic.loadUiType("ui/44-5.ui")[0]
-form_class5 = uic.loadUiType("ui/5.ui")[0]
-form_class6 = uic.loadUiType("ui/6.ui")[0]
-form_class6_2 = uic.loadUiType("ui/6-2.ui")[0]
-
-
-# Class 선언
-class popupimage(QDialog):
-    def __init__(self):
-        super().__init__()
-
-        self.setupUI()
-
-    def setupUI(self):
-        Image.open("image/cost.PNG").show()
-
-
-class popupimage2(QDialog):
-    def __init__(self):
-        super().__init__()
-        self.setupUI()
-
-    def setupUI(self):
-        Image.open("image/cost.PNG").show()
-
-
-class popupimage3(QDialog):
-    def __init__(self):
-        super().__init__()
-        self.setupUI()
-
-    def setupUI(self):
-        Image.open("image/model.jpg").show()
-
-
-class popupcase1(QDialog):
-    def __init__(self):
-        super().__init__()
-        self.setupUI()
-
-    def setupUI(self):
-        print("here!@@@@@@")
-        reloading_func.execfile("view/displayCase/display_case1.py")
-
-
-class popupcase2(QDialog):
-    def __init__(self):
-        super().__init__()
-        self.setupUI()
-
-    def setupUI(self):
-        reloading_func.execfile("view/displayCase/display_case2.py")
-
-
-class popupcase3(QDialog):
-    def __init__(self):
-        super().__init__()
-        self.setupUI()
-
-    def setupUI(self):
-        reloading_func.execfile("view/displayCase/display_case3.py")
-
-
-class popupcase4(QDialog):
-    def __init__(self):
-        super().__init__()
-        self.setupUI()
-
-    def setupUI(self):
-        reloading_func.execfile("view/displayCase/display_case4.py")
-
-
-class popupcase5(QDialog):
-    def __init__(self):
-        super().__init__()
-        self.setupUI()
-
-    def setupUI(self):
-        reloading_func.execfile("view/displayCase/display_case5.py")
 
 
 class TestCaseList(QMainWindow, uic.loadUiType("ui/changCopy.ui")[0]):  # 이미 러닝된 데이터 불러오기 눌렀을때 다음창
@@ -144,22 +42,22 @@ class TestCaseList(QMainWindow, uic.loadUiType("ui/changCopy.ui")[0]):  # 이미
         self.a = TestCase1()  # x:31,y:10,z:2
 
     def btn7func(self):  # 실제좌표와 예상좌표
-        self.a = changg_3()  # x:25,y:11,z:4
+        self.a = TestCase3()  # x:25,y:11,z:4
 
     def btn8func(self):  # 추정할 좌표 골라보기
-        self.a = changg_5()  # x:23,y:16,z:5
+        self.a = TestCase5()  # x:23,y:16,z:5
 
     def btn10func(self):  # 추정할 좌표 골라보기
-        self.a = changg_2()  # x:28,y:11,z:5
+        self.a = TestCase2()  # x:28,y:11,z:5
 
     def btn11func(self):  # 추정할 좌표 골라보기
-        self.a = changg_4()  # x:2,y:11,z:2
+        self.a = TestCase4()  # x:2,y:11,z:2
 
     def btn12func(self):
-        self.a = changggg()
+        self.a = TestCase6User()
 
 
-class TestCase1(QMainWindow, form_class3):  # x:31,y:10,z:2
+class TestCase1(QMainWindow, uic.loadUiType("ui/testCase1.ui")[0]):  # x:31,y:10,z:2
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -187,170 +85,119 @@ class TestCase1(QMainWindow, form_class3):  # x:31,y:10,z:2
         showCurrentPosition(34, 10, 2)
 
 
-class changg_2(QMainWindow, form_class3_2):  # x:28,y:11,z:5
+class TestCase2(QMainWindow, uic.loadUiType("ui/testCase2.ui")[0]):  # x:28,y:11,z:5
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.setGeometry(300, 300, 400, 300)  # 위치설정
         self.show()
         self.btn1.clicked.connect(self.btn1func)
         self.btn2.clicked.connect(self.btn2func)
         self.btn3.clicked.connect(self.btn3func)
-        self.btn4.clicked.connect(self.btn4func)
-        self.btn5.clicked.connect(self.btn5func)
 
     def btn1func(self):  # 현 위치에서 각 센서들의 RSSI값
-        reloading_func.execfile("view/visualizeMap/0_visualize_map_temp_case2.py")
+        # reloading_func.execfile("view/visualizeMap/0_visualize_map_temp_case1.py")
+        visualize=VisualizeMap('view/visualizeMap/dataCaseForMap/txt2py_map_1_data_case2_for_map.txt',
+                               'view/visualizeMap/dataCaseForMap/txt2py_map_2_data_case2_for_map.txt')
+        visualize.showMap()
 
     def btn2func(self):  # DNN을 이용하여 예상 한 값
-        reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp3.py")
+        # reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp1.py")
+        xDataPath = "./controller/estimatingPosition/dataSet/txt2py_test_x_data_case2.txt"
+        yDataPath = "./controller/estimatingPosition/dataSet/txt2py_test_y_data_case2.txt"
+        temp = "controller/estimatingPosition/train_model3.ckpt-999"
+        test = EstimatingPosition(xDataPath, yDataPath, temp)
+        test.showPosition()
 
-    def btn3func(self):  # Q-Learning environmet 보기
-        self.a = changgg_2()
-
-    def btn4func(self):  # Q-Learning 실행
-        print("Q러닝 실행하는 코드 넣을거임")
-
-    def btn5func(self):  # 건물구조에서 사람의 현재위치
-        reloading_func.execfile("view/watchWhere/0_watch_where_2.py")
+    def btn3func(self):  # 건물구조에서 사람의 현재위치
+        showCurrentPosition(28, 11, 5)
 
 
-class changg_3(QMainWindow, form_class3_3):  # x:25,y:11,z:4
+class TestCase3(QMainWindow,  uic.loadUiType("ui/testCase3.ui")[0]):  # x:25,y:11,z:4
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.setGeometry(300, 300, 400, 300)  # 위치설정
         self.show()
         self.btn1.clicked.connect(self.btn1func)
         self.btn2.clicked.connect(self.btn2func)
         self.btn3.clicked.connect(self.btn3func)
-        self.btn4.clicked.connect(self.btn4func)
-        self.btn5.clicked.connect(self.btn5func)
 
     def btn1func(self):  # 현 위치에서 각 센서들의 RSSI값
-        reloading_func.execfile("view/visualizeMap/0_visualize_map_temp_case3.py")
+        # reloading_func.execfile("view/visualizeMap/0_visualize_map_temp_case1.py")
+        visualize = VisualizeMap('view/visualizeMap/dataCaseForMap/txt2py_map_1_data_case3_for_map.txt',
+                                 'view/visualizeMap/dataCaseForMap/txt2py_map_2_data_case3_for_map.txt')
+        visualize.showMap()
 
     def btn2func(self):  # DNN을 이용하여 예상 한 값
-        reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp3.py")
+        # reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp1.py")
+        xDataPath = "./controller/estimatingPosition/dataSet/txt2py_test_x_data_case3.txt"
+        yDataPath = "./controller/estimatingPosition/dataSet/txt2py_test_y_data_case3.txt"
+        temp = "controller/estimatingPosition/train_model3.ckpt-999"
+        test = EstimatingPosition(xDataPath, yDataPath, temp)
+        test.showPosition()
 
-    def btn3func(self):  # Q-Learning environmet 보기
-        self.a = changgg_3()
-
-    def btn4func(self):  # Q-Learning 실행
-        reloading_func.execfile("controller/qLearning/Qlearning3.py")
-
-    def btn5func(self):  # 건물구조에서 사람의 현재위치
-        reloading_func.execfile("view/watchWhere/0_watch_where_3.py")
+    def btn3func(self):  # 건물구조에서 사람의 현재위치
+        showCurrentPosition(25, 11, 4)
 
 
-class changg_4(QMainWindow, form_class3_4):  # x:2,y:11,z:2
+class TestCase4(QMainWindow, uic.loadUiType("ui/testCase4.ui")[0]):  # x:2,y:11,z:2
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.setGeometry(300, 300, 400, 300)  # 위치설정
         self.show()
         self.btn1.clicked.connect(self.btn1func)
         self.btn2.clicked.connect(self.btn2func)
         self.btn3.clicked.connect(self.btn3func)
-        self.btn4.clicked.connect(self.btn4func)
-        self.btn5.clicked.connect(self.btn5func)
 
     def btn1func(self):  # 현 위치에서 각 센서들의 RSSI값
-        reloading_func.execfile("view/visualizeMap/0_visualize_map_temp_case4.py")
+        # reloading_func.execfile("view/visualizeMap/0_visualize_map_temp_case1.py")
+        visualize = VisualizeMap('view/visualizeMap/dataCaseForMap/txt2py_map_1_data_case4_for_map.txt',
+                                 'view/visualizeMap/dataCaseForMap/txt2py_map_2_data_case4_for_map.txt')
+        visualize.showMap()
 
     def btn2func(self):  # DNN을 이용하여 예상 한 값
-        reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp4.py")
+        # reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp1.py")
+        xDataPath = "./controller/estimatingPosition/dataSet/txt2py_test_x_data_case4.txt"
+        yDataPath = "./controller/estimatingPosition/dataSet/txt2py_test_y_data_case4.txt"
+        temp = "controller/estimatingPosition/train_model3.ckpt-999"
+        test = EstimatingPosition(xDataPath, yDataPath, temp)
+        test.showPosition()
 
-    def btn3func(self):  # Q-Learning environmet 보기
-        self.a = changgg_4()
-
-    def btn4func(self):  # Q-Learning 실행
-        reloading_func.execfile("controller/qLearning/Qlearning4.py")
-
-    def btn5func(self):  # 건물구조에서 사람의 현재위치
-        reloading_func.execfile("view/watchWhere/0_watch_where_4.py")
+    def btn3func(self):  # 건물구조에서 사람의 현재위치
+        showCurrentPosition(2, 11, 2)
 
 
-class changg_5(QMainWindow, form_class3_5):  # x:23,y:16,z:5
+class TestCase5(QMainWindow, uic.loadUiType("ui/testCase5.ui")[0]):  # x:23,y:16,z:5
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.setGeometry(300, 300, 400, 300)  # 위치설정
         self.show()
         self.btn1.clicked.connect(self.btn1func)
         self.btn2.clicked.connect(self.btn2func)
         self.btn3.clicked.connect(self.btn3func)
-        self.btn4.clicked.connect(self.btn4func)
-        self.btn5.clicked.connect(self.btn5func)
 
     def btn1func(self):  # 현 위치에서 각 센서들의 RSSI값
-        reloading_func.execfile("view/visualizeMap/0_visualize_map_temp_case5.py")
+        # reloading_func.execfile("view/visualizeMap/0_visualize_map_temp_case1.py")
+        visualize = VisualizeMap('view/visualizeMap/dataCaseForMap/txt2py_map_1_data_case5_for_map.txt',
+                                 'view/visualizeMap/dataCaseForMap/txt2py_map_2_data_case5_for_map.txt')
+        visualize.showMap()
 
     def btn2func(self):  # DNN을 이용하여 예상 한 값
-        reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp5.py")
+        # reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp1.py")
+        xDataPath = "./controller/estimatingPosition/dataSet/txt2py_test_x_data_case5.txt"
+        yDataPath = "./controller/estimatingPosition/dataSet/txt2py_test_y_data_case5.txt"
+        temp = "controller/estimatingPosition/train_model3.ckpt-999"
+        test = EstimatingPosition(xDataPath, yDataPath, temp)
+        test.showPosition()
 
-    def btn3func(self):  # Q-Learning environmet 보기
-        self.a = changgg_5()
-
-    def btn4func(self):  # Q-Learning 실행
-        reloading_func.execfile("controller/qLearning/Qlearning5.py")
-
-    def btn5func(self):  # 건물구조에서 사람의 현재위치
-        reloading_func.execfile("view/watchWhere/0_watch_where_5.py")
-
-
-class changgg(QMainWindow, form_class4):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
-        self.show()
-        self.btn1.clicked.connect(self.btn1func)
-
-    def btn1func(self):  # 화재위치 , 사람의 수
-        reloading_func.execfile("view/displayCase/display_case1.py")
+    def btn3func(self):  # 건물구조에서 사람의 현재위치
+        showCurrentPosition(23, 16, 5)
 
 
-class changgg_2(QMainWindow, form_class4_2):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
-        self.show()
-        self.btn1.clicked.connect(self.btn1func)
-
-    def btn1func(self):  # 화재위치 , 사람의 수
-        reloading_func.execfile("view/displayCase/display_case2.py")
-
-
-class changgg_3(QMainWindow, form_class4_3):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
-        self.show()
-        self.btn1.clicked.connect(self.btn1func)
-
-    def btn1func(self):  # 화재위치 , 사람의 수
-        reloading_func.execfile("view/displayCase/display_case3.py")
-
-
-class changgg_4(QMainWindow, form_class4_4):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
-        self.show()
-        self.btn1.clicked.connect(self.btn1func)
-
-    def btn1func(self):  # 화재위치 , 사람의 수
-        reloading_func.execfile("view/displayCase/display_case4.py")
-
-
-class changgg_5(QMainWindow, form_class4_5):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
-        self.show()
-        self.btn1.clicked.connect(self.btn1func)
-
-    def btn1func(self):  # 화재위치 , 사람의 수
-        reloading_func.execfile("view/displayCase/display_case5.py")
-
-
-class changggg(QMainWindow, form_class5):
+class TestCase6User(QMainWindow, uic.loadUiType("ui/testCase6.ui")[0]):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -363,11 +210,10 @@ class changggg(QMainWindow, form_class5):
         y = float(self.edit2.text())  # y좌표
         z = float(self.edit3.text())  # z좌표
         n = float(self.edit4.text())  # 사람수
-        ##        reloading_func.execfile("C:/사용자/USER/PycharmProjects/pythonProject/pythonProject2/inputing.py")
-        self.a = changgggg()
+        self.a = TestCase6()
 
 
-class changgggg(QMainWindow, form_class6):
+class TestCase6(QMainWindow, uic.loadUiType("ui/testCase6_1.ui")[0]):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -375,43 +221,20 @@ class changgggg(QMainWindow, form_class6):
         self.btn1.clicked.connect(self.btn1func)
         self.btn2.clicked.connect(self.btn2func)
         self.btn3.clicked.connect(self.btn3func)
-        self.btn4.clicked.connect(self.btn4func)
-        self.btn5.clicked.connect(self.btn5func)
+
 
     def btn1func(self):  # 현 위치에서 각 센서들의 RSSI값
         gogogo.play(x, y, z)
 
     def btn2func(self):  # DNN을 이용하여 예상 한 값
-        print(ESTIMATING_POSITION_temp_for_inputing.ESTIMATINGPOSITIONBYINPUT(inputing.inputing(x, y, z)))
+        # print(estimateTest.ESTIMATINGPOSITIONBYINPUT(inputing.inputing(x, y, z)))
+        print(ESTIMATING_POSITION_temp_for_inputing.ESTIMATINGPOSITIONBYINPUT((inputing.inputing(x, y, z))))
 
     def btn3func(self):  # Q-Learning environmet 보기
-        # self.a=changgg_3()
-        self.a = changgggg_2()
-
-    def btn4func(self):  # Q-Learning 실행
-        global stair, state
-        stair, state = ESTIMATING_POSITION_temp_for_inputing.ESTIMATINGPOSITIONBYINPUT(inputing.inputing(x, y, z))
-        ##        stair=float(stair)
-        ##        state=float(state)
-
-        inputQlearning.Qlearning(1, int(n), int(state), int(stair))  # 화재위치바꾸고싶으면 바꾸면
-
-    def btn5func(self):  # 건물구조에서 사람의 현재위치
         watch_where_func.watching(mola.look_structure_position(x, y, z))
 
 
-class changgggg_2(QMainWindow, form_class6_2):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
-        self.show()
-        self.btn1.clicked.connect(self.btn1func)
-
-    def btn1func(self):
-        reloading_func.execfile("./display_input.py")
-
-
-class MainWindowClass(QMainWindow, uic.loadUiType("ui/MainWindow.ui")[0]):  # 제일 먼저 켜지는 메인 윈도우
+class MainWindowClass(QMainWindow, uic.loadUiType("window/ui/MainWindow.ui")[0]):  # 제일 먼저 켜지는 메인 윈도우
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -445,8 +268,7 @@ class MainWindowClass(QMainWindow, uic.loadUiType("ui/MainWindow.ui")[0]):  # �
         print("구현안할거야")
 
     def btn9func(self):  # 딥러닝 모델보기
-        self.a = popupimage3()
-
+        Image.open("image/model.jpg").show()
 
 def my_exception_hook(exctype, value, traceback):
     # Print the error and traceback
