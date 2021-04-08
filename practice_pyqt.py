@@ -28,7 +28,7 @@ class Aloitus(QMainWindow, form_class):
     def btn1func(self):#건물구조 보기
 ##        a=popupimage2()
 ##        a.exec_()
-        reloading_func.execfile("silsun.py")
+        reloading_func.execfile("view/mainWindow/silsun.py")
     def btn2func(self):#한 층의 평면도 보기
         aa=popupimage()
         aa.exec_()

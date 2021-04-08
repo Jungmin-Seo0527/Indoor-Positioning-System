@@ -21,7 +21,7 @@ from matplotlib import colors
 
 # image들 연결
 img = Image.open("image/cost.PNG")
-##img2=Image.open("건물구조.jpg")
+# img2=Image.open("건물구조.jpg")
 img3 = Image.open("image/model.jpg")
 case1 = Image.open("image/case1.png")
 case2 = Image.open("image/case2.png")
@@ -56,7 +56,7 @@ class popupimage(QDialog):
         self.setupUI()
 
     def setupUI(self):
-        img.show()
+        Image.open("image/cost.PNG").show()
 
 
 class popupimage2(QDialog):
@@ -65,7 +65,7 @@ class popupimage2(QDialog):
         self.setupUI()
 
     def setupUI(self):
-        img.show() #
+        Image.open("image/cost.PNG").show()
 
 
 class popupimage3(QDialog):
@@ -74,7 +74,7 @@ class popupimage3(QDialog):
         self.setupUI()
 
     def setupUI(self):
-        img3.show()
+        Image.open("image/model.jpg").show()
 
 
 class popupcase1(QDialog):
@@ -83,7 +83,7 @@ class popupcase1(QDialog):
         self.setupUI()
 
     def setupUI(self):
-        reloading_func.execfile("./display_case1.py")
+        reloading_func.execfile("view/displayCase/display_case1.py")
 
 
 class popupcase2(QDialog):
@@ -92,7 +92,7 @@ class popupcase2(QDialog):
         self.setupUI()
 
     def setupUI(self):
-        reloading_func.execfile("./display_case2.py")
+        reloading_func.execfile("view/displayCase/display_case2.py")
 
 
 class popupcase3(QDialog):
@@ -101,7 +101,7 @@ class popupcase3(QDialog):
         self.setupUI()
 
     def setupUI(self):
-        reloading_func.execfile("./display_case3.py")
+        reloading_func.execfile("view/displayCase/display_case3.py")
 
 
 class popupcase4(QDialog):
@@ -110,7 +110,7 @@ class popupcase4(QDialog):
         self.setupUI()
 
     def setupUI(self):
-        reloading_func.execfile("./display_case4.py")
+        reloading_func.execfile("view/displayCase/display_case4.py")
 
 
 class popupcase5(QDialog):
@@ -119,7 +119,7 @@ class popupcase5(QDialog):
         self.setupUI()
 
     def setupUI(self):
-        reloading_func.execfile("./display_case5.py")
+        reloading_func.execfile("view/displayCase/display_case5.py")
 
 
 class chang(QMainWindow, form_class2):  # 이미 러닝된 데이터 불러오기 눌렀을때 다음창
@@ -170,23 +170,23 @@ class changg(QMainWindow, form_class3):  # x:31,y:10,z:2
         self.btn1.clicked.connect(self.btn1func)
         self.btn2.clicked.connect(self.btn2func)
         self.btn3.clicked.connect(self.btn3func)
-        self.btn4.clicked.connect(self.btn4func)
+        # self.btn4.clicked.connect(self.btn4func)
         self.btn5.clicked.connect(self.btn5func)
 
     def btn1func(self):  # 현 위치에서 각 센서들의 RSSI값
-        reloading_func.execfile("./0_visualize_map_temp_case1.py")
+        reloading_func.execfile("view/visualizeMap/0_visualize_map_temp_case1.py")
 
     def btn2func(self):  # DNN을 이용하여 예상 한 값
-        reloading_func.execfile("./0_ESTIMATING_POSITION_temp1.py")
+        reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp1.py")
 
     def btn3func(self):  # Q-Learning environmet 보기
         self.a = changgg()
 
     def btn4func(self):  # Q-Learning 실행
-        reloading_func.execfile("./Qlearning.py")
+        reloading_func.execfile("controller/qLearning/Qlearning.py")
 
     def btn5func(self):  # 건물구조에서 사람의 현재위치
-        reloading_func.execfile("./0_watch_where_1.py")
+        reloading_func.execfile("view/watchWhere/0_watch_where_1.py")
 
 
 class changg_2(QMainWindow, form_class3_2):  # x:28,y:11,z:5
@@ -201,10 +201,10 @@ class changg_2(QMainWindow, form_class3_2):  # x:28,y:11,z:5
         self.btn5.clicked.connect(self.btn5func)
 
     def btn1func(self):  # 현 위치에서 각 센서들의 RSSI값
-        reloading_func.execfile("./0_visualize_map_temp_case2.py")
+        reloading_func.execfile("view/visualizeMap/0_visualize_map_temp_case2.py")
 
     def btn2func(self):  # DNN을 이용하여 예상 한 값
-        reloading_func.execfile("./0_ESTIMATING_POSITION_temp3.py")
+        reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp3.py")
 
     def btn3func(self):  # Q-Learning environmet 보기
         self.a = changgg_2()
@@ -213,7 +213,7 @@ class changg_2(QMainWindow, form_class3_2):  # x:28,y:11,z:5
         print("Q러닝 실행하는 코드 넣을거임")
 
     def btn5func(self):  # 건물구조에서 사람의 현재위치
-        reloading_func.execfile("./0_watch_where_2.py")
+        reloading_func.execfile("view/watchWhere/0_watch_where_2.py")
 
 
 class changg_3(QMainWindow, form_class3_3):  # x:25,y:11,z:4
@@ -228,19 +228,19 @@ class changg_3(QMainWindow, form_class3_3):  # x:25,y:11,z:4
         self.btn5.clicked.connect(self.btn5func)
 
     def btn1func(self):  # 현 위치에서 각 센서들의 RSSI값
-        reloading_func.execfile("./0_visualize_map_temp_case3.py")
+        reloading_func.execfile("view/visualizeMap/0_visualize_map_temp_case3.py")
 
     def btn2func(self):  # DNN을 이용하여 예상 한 값
-        reloading_func.execfile("./0_ESTIMATING_POSITION_temp3.py")
+        reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp3.py")
 
     def btn3func(self):  # Q-Learning environmet 보기
         self.a = changgg_3()
 
     def btn4func(self):  # Q-Learning 실행
-        reloading_func.execfile("./Qlearning3.py")
+        reloading_func.execfile("controller/qLearning/Qlearning3.py")
 
     def btn5func(self):  # 건물구조에서 사람의 현재위치
-        reloading_func.execfile("./0_watch_where_3.py")
+        reloading_func.execfile("view/watchWhere/0_watch_where_3.py")
 
 
 class changg_4(QMainWindow, form_class3_4):  # x:2,y:11,z:2
@@ -255,19 +255,19 @@ class changg_4(QMainWindow, form_class3_4):  # x:2,y:11,z:2
         self.btn5.clicked.connect(self.btn5func)
 
     def btn1func(self):  # 현 위치에서 각 센서들의 RSSI값
-        reloading_func.execfile("./0_visualize_map_temp_case4.py")
+        reloading_func.execfile("view/visualizeMap/0_visualize_map_temp_case4.py")
 
     def btn2func(self):  # DNN을 이용하여 예상 한 값
-        reloading_func.execfile("./0_ESTIMATING_POSITION_temp4.py")
+        reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp4.py")
 
     def btn3func(self):  # Q-Learning environmet 보기
         self.a = changgg_4()
 
     def btn4func(self):  # Q-Learning 실행
-        reloading_func.execfile("./Qlearning4.py")
+        reloading_func.execfile("controller/qLearning/Qlearning4.py")
 
     def btn5func(self):  # 건물구조에서 사람의 현재위치
-        reloading_func.execfile("./0_watch_where_4.py")
+        reloading_func.execfile("view/watchWhere/0_watch_where_4.py")
 
 
 class changg_5(QMainWindow, form_class3_5):  # x:23,y:16,z:5
@@ -282,19 +282,19 @@ class changg_5(QMainWindow, form_class3_5):  # x:23,y:16,z:5
         self.btn5.clicked.connect(self.btn5func)
 
     def btn1func(self):  # 현 위치에서 각 센서들의 RSSI값
-        reloading_func.execfile("./0_visualize_map_temp_case5.py")
+        reloading_func.execfile("view/visualizeMap/0_visualize_map_temp_case5.py")
 
     def btn2func(self):  # DNN을 이용하여 예상 한 값
-        reloading_func.execfile("./0_ESTIMATING_POSITION_temp5.py")
+        reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp5.py")
 
     def btn3func(self):  # Q-Learning environmet 보기
         self.a = changgg_5()
 
     def btn4func(self):  # Q-Learning 실행
-        reloading_func.execfile(".Qlearning5.py")
+        reloading_func.execfile("controller/qLearning/Qlearning5.py")
 
     def btn5func(self):  # 건물구조에서 사람의 현재위치
-        reloading_func.execfile("./0_watch_where_5.py")
+        reloading_func.execfile("view/watchWhere/0_watch_where_5.py")
 
 
 class changgg(QMainWindow, form_class4):
@@ -305,7 +305,7 @@ class changgg(QMainWindow, form_class4):
         self.btn1.clicked.connect(self.btn1func)
 
     def btn1func(self):  # 화재위치 , 사람의 수
-        reloading_func.execfile("./display_case1.py")
+        reloading_func.execfile("view/displayCase/display_case1.py")
 
 
 class changgg_2(QMainWindow, form_class4_2):
@@ -316,7 +316,7 @@ class changgg_2(QMainWindow, form_class4_2):
         self.btn1.clicked.connect(self.btn1func)
 
     def btn1func(self):  # 화재위치 , 사람의 수
-        reloading_func.execfile("./display_case2.py")
+        reloading_func.execfile("view/displayCase/display_case2.py")
 
 
 class changgg_3(QMainWindow, form_class4_3):
@@ -327,7 +327,7 @@ class changgg_3(QMainWindow, form_class4_3):
         self.btn1.clicked.connect(self.btn1func)
 
     def btn1func(self):  # 화재위치 , 사람의 수
-        reloading_func.execfile("./display_case3.py")
+        reloading_func.execfile("view/displayCase/display_case3.py")
 
 
 class changgg_4(QMainWindow, form_class4_4):
@@ -338,7 +338,7 @@ class changgg_4(QMainWindow, form_class4_4):
         self.btn1.clicked.connect(self.btn1func)
 
     def btn1func(self):  # 화재위치 , 사람의 수
-        reloading_func.execfile("./display_case4.py")
+        reloading_func.execfile("view/displayCase/display_case4.py")
 
 
 class changgg_5(QMainWindow, form_class4_5):
@@ -349,7 +349,7 @@ class changgg_5(QMainWindow, form_class4_5):
         self.btn1.clicked.connect(self.btn1func)
 
     def btn1func(self):  # 화재위치 , 사람의 수
-        reloading_func.execfile("./display_case5.py")
+        reloading_func.execfile("view/displayCase/display_case5.py")
 
 
 class changggg(QMainWindow, form_class5):
@@ -432,12 +432,12 @@ class WindowClass(QMainWindow, form_class):  # 제일 먼저 켜지는 메인 �
         self.btn9.clicked.connect(self.btn9func)
 
     def btn1func(self):  # 건물구조 보기
-        reloading_func.execfile("./silsun.py")
+        reloading_func.execfile("view/mainWindow/silsun.py")
 
     def btn2func(self):  # 한 층의 평면도 보기
 
         # reloading_func.execfile("C:/Users/UESR/PycharmProjects/pythonProject/pythonProject2/display.py")
-        reloading_func.execfile("./display.py")
+        reloading_func.execfile("view/mainWindow/display.py")
 
 
     def btn3func(self):  # 이미 러닝된 데이터 불러오기
