@@ -5,8 +5,8 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 import module2
 
-x_test= np.loadtxt('txt2py_test_x_data_case3.txt',delimiter=',',skiprows=1,dtype='float32')
-y_test= np.loadtxt('txt2py_test_y_data_case3.txt',delimiter=',',skiprows=1,dtype='float32')
+x_test= np.loadtxt('dataSet/txt2py_test_x_data_case3.txt',delimiter=',',skiprows=1,dtype='float32')
+y_test= np.loadtxt('dataSet/txt2py_test_y_data_case3.txt',delimiter=',',skiprows=1,dtype='float32')
 x_test = x_test.reshape(-1,18)
 ##print(x_test)
 X = tf.placeholder(tf.float32, [None, 18])

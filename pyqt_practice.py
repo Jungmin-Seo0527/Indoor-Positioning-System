@@ -19,15 +19,7 @@ import matplotlib.pyplot as plt
 import math
 from matplotlib import colors
 
-# image들 연결
-img = Image.open("image/cost.PNG")
-# img2=Image.open("건물구조.jpg")
-img3 = Image.open("image/model.jpg")
-case1 = Image.open("image/case1.png")
-case2 = Image.open("image/case2.png")
-case3 = Image.open("image/case3.png")
-case4 = Image.open("image/case4.png")
-case5 = Image.open("image/case5.png")
+from controller.estimatingPosition.EstimatingPosition import EstimatingPosition
 
 # UI파일 연결
 form_class = uic.loadUiType("ui/1.ui")[0]
@@ -177,7 +169,12 @@ class changg(QMainWindow, form_class3):  # x:31,y:10,z:2
         reloading_func.execfile("view/visualizeMap/0_visualize_map_temp_case1.py")
 
     def btn2func(self):  # DNN을 이용하여 예상 한 값
-        reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp1.py")
+        # reloading_func.execfile("controller/estimatingPosition/0_ESTIMATING_POSITION_temp1.py")
+        xDataPath = "./controller/estimatingPosition/dataSet/txt2py_test_x_data_case1.txt"
+        yDataPath = "./controller/estimatingPosition/dataSet/txt2py_test_y_data_case1.txt"
+        temp = "controller/estimatingPosition/train_model3.ckpt-999"
+        test = EstimatingPosition(xDataPath, yDataPath, temp)
+        test.showPosition()
 
     def btn3func(self):  # Q-Learning environmet 보기
         self.a = changgg()
@@ -436,7 +433,6 @@ class WindowClass(QMainWindow, form_class):  # 제일 먼저 켜지는 메인 �
 
     def btn2func(self):  # 한 층의 평면도 보기
 
-        # reloading_func.execfile("C:/Users/UESR/PycharmProjects/pythonProject/pythonProject2/display.py")
         reloading_func.execfile("view/mainWindow/display.py")
 
 
@@ -467,6 +463,7 @@ sys._excepthook = sys.excepthook
 sys.excepthook = my_exception_hook
 
 if __name__ == "__main__":
+
     # QApplication : 프로그램을 실행시켜주는 클래스
     app = QApplication(sys.argv)
 
