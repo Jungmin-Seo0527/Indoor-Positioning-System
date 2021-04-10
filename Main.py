@@ -240,7 +240,7 @@ class MainWindowClass(QMainWindow, uic.loadUiType("window/ui/MainWindow.ui")[0])
 
     def InitAloitus(self):
         self.show()
-        self.setWindowTitle('서정민')  # 제목
+        self.setWindowTitle('서정민 - Indoor Positioning System')  # 제목
         self.setGeometry(300, 300, 400, 300)  # 위치설정
 
         self.btn4.setEnabled(False)
