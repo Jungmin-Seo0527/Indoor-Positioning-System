@@ -1,66 +1,36 @@
-# Indoor positioning system
+# Indoor Positioning System
 
-* ÇÁ·Î±×·¥ ÀüÃ¼ ½ÇÇà : pyqt_practice.py ½ÇÇà!!!
-=========================================================
-·¯´× ÇÏ´Â ¸ğ½ÀÀ» º¸¿©ÁØ´Ù => 0_TRAIN_TENSOR ½ÇÇà 
+## í”„ë¡œì íŠ¸ ê°œìš”
 
-ÄÉÀÌ½ºº° ÃßÁ¤À§Ä¡ ±¸ÇÑ´Ù => 0_ESTIMATING_POSITION_temp ½ÇÇà (case nÀ¸·Î n¹øÂ°ÀÇ case ¼³Á¤)
-(train_model3.ckpt-n n¿¡ µû¶ó ¸î¹øÂ° epochÀÎÁö ¼±ÅÃ°¡´É)
+* ë¹„ì½˜ì—ì„œ ì†¡ì‹ í•˜ëŠ” RSSIê°’ì„ ì´ìš©í•´ì„œ ì‹¤ë‚´ ì¸¡ìœ„ë¥¼ í•˜ëŠ” ì‹œìŠ¤í…œ
+* RSSIì˜ ë‚®ì€ ì‹ ë¢°ì„±, ë°©í–¥ì„±ì´ ì—†ëŠ” ë‹¨ì ì„ ë”¥ëŸ¬ë‹ì„ ì ìš©í•˜ì—¬ ê°œì„ 
 
-¼¾¼­º°ÀÇ RSSI¿Í ÃßÁ¤À§Ä¡¸¦ ±×·¡ÇÁ·Î º»´Ù => 0_visualize_map_temp_case1 ½ÇÇà (ÆÄÀÏÀÌ¸§º°·Î ³ª´²ÀÖÀ½)
+## í”„ë¡œì íŠ¸ ì‹¤í–‰
 
-°Ç¹° ±¸Á¶¿Í ÃßÁ¤À§Ä¡¸¦ º¸¿©ÁØ´Ù => 0_watch_where (À§Ä¡´Â ³»ºÎ¿¡ ÀÖ´Â ÁÂÇ¥·Î ¼³Á¤)
+* `Main.py` ì‹¤í–‰
 
-------------------------------------------------------------------------------------------
-<<<<<<<<<<inputÀ» ÇÏ´Â°æ¿ì>>>>>>>>>>
+### 1. ë©”ì¸ í™”ë©´
 
-inputÀ¸·Î Á¤ÇÑ À§Ä¡¿Í ÇØ´ç À§Ä¡¿¡ ¸ÅÄªµÇ´Â ¼¾¼­°ªÀ» µµÃâÇÏ´Â ÇÔ¼ö => inputing (³»ºÎ¿¡ ÀÖ´Â ÁÂÇ¥·Î À§Ä¡¼±Á¤)
+![](https://i.ibb.co/vPj9Krp/image.jpg)
 
-¼¾¼­°ªÀ» ÀÔ·Â¹Ş¾Æ À§Ä¡ÃßÁ¤ÇÏ´Â ÇÔ¼ö => ESTIMATING_POSITION_temp_for_inputing(¸®ÅÏ°ªÀÌ À§Ä¡)
+* ê±´ë¬¼ êµ¬ì¡° ë³´ê¸°
+    * ê°€ìƒì˜ ì‹¤ë‚´ ê³µê°„ì˜ êµ¬ì¡°ë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤.
+      ![](https://i.ibb.co/Wxgp4Cs/image.jpg)
+        * 2ì¸µ ê±´ë¬¼ì´ë©° ê° ì¸µì—ëŠ” 8ê°œì˜ ë°©ì´ ì¡´ì¬, ì¤‘ì•™ì— ë³µë„ê°€ ì¡´ì¬
+        * ë¹¨ê°„ì ì´ ë¹„ì½˜ì„ ì˜ë¯¸í•©ë‹ˆë‹¤.
+        * ê±°ë¦¬ì˜ ë‹¨ìœ„ëŠ” ë¯¸í„° ì…ë‹ˆë‹¤. (40m X 20m X 6m)
 
-ÀÌ°É º¸´Â ÄÚµå => Watch
+* í•œ ì¸µì˜ í‰ë©´ë„ ë³´ê¸°
+    * ê±´ë¬¼ êµ¬ì¡°ì˜ ë‹¨ì¸µ ì´ë¯¸ì§€ë¥¼ ë³´ì—¬ì¤ë‹ˆë‹¤.
+      ![](https://i.ibb.co/CvKdP06/image.jpg)
+        * ì¢Œì¸¡ì´ ì¼ì¸µ, ìš°ì¸¡ì´ 2ì¸µ ì…ë‹ˆë‹¤.
+        * ê° ì¸µì—ëŠ” 8ê°œì˜ ë°©ì´ ì¡´ì¬í•˜ë©°, ì¤‘ì•™ì—ëŠ” ë³µë„ê°€ ìˆìŠµë‹ˆë‹¤.
 
-°Ç¹°±¸Á¶¿Í ÃßÁ¤À§Ä¡¸¦ º¸¿©ÁØ´Ù => watch_where_func
+* ë”¥ëŸ¬ë‹ ëª¨ë¸ ë³´ê¸°
+    * ê°œë°œí•œ ë”¥ëŸ¬ë‹ ëª¨ë¸ì˜ êµ¬ì¡° ì´ë¯¸ì§€ ì…ë‹ˆë‹¤.
+      ![](https://i.ibb.co/WBg3fHM/image.jpg)
+        * ê±´ë¬¼ì— ì¡´ì¬í•˜ëŠ” ì´ 18ê°œì˜ ë¹„ì½˜ì—ì„œ ì†¡ì‹ í•˜ëŠ” RSSIê°’ì„ ì…ë ¥ë°›ì•„ì„œ Hidden Layerë¥¼ ê±°ì³ì„œ (x, y, z)ì¢Œí‘œì¸ 3ê°œì˜ Outputì„ ë„ì¶œí•´ë‚´ëŠ” DNN(Deep Neural
+          Network) êµ¬ì¡°ë¡œ ê°œë°œí•˜ì˜€ìŠµë‹ˆë‹¤.
 
-ÀÌ°Éº¸´ÂÄÚµå =>  testy
+### 2. ëŸ¬ë‹ëœ ë°ì´í„° ë¶ˆëŸ¬ì˜¤ê¸° (í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤ì™€ ì„ì˜ì˜ ì¢Œí‘œ ì…ë ¥)
 
-&&&&&&&&&¼¾¼­º°ÀÇ RSSI¿Í ÃßÁ¤À§Ä¡¸¦ ±×·¡ÇÁ·Î º»´Ù : ÀÌ°Ô nano power¸¦ Á÷Á¢ °è»êÇØ¾ßÇØ¼­ ¹®Á¦ÀÌ´Ù&&&&&&&&&&
-
-==========================================================
-<<<<<<<<<<¼³¸í>>>>>>>>>>
-
-0_TRAIN_TENSOR : ÀÌ°É·Î ·¯´×ÇÏ´Â°Å
-('txt2py_x_data.txt','txt2py_y_data.txt')
-
-way_2_reload : 0_ESTIMATING_POSITION, 0_visualize_map ÆÄÀÏ ½ÇÇà
-(0_ESTIMATING_POSITION, 0_visualize_map,reloading_func)
-
-reloading_func : ÆÄÀÏ open ÇÔ¼ö
-
-0_visualize_map_temp_case5 : ½ÅÈ£¼¼±â Ç¥·Î º¸¿©ÁÖ´Â ÄÚµå
-('txt2py_map_1_data_case5_for_map.txt','txt2py_map_2_data_case5_for_map.txt')
-
-mola : 3D ±×·¡ÇÈ º¸¿©ÁÖ´Â ÇÔ¼ö
-
-0_watch_where :  À§Ä¡ Á¹¶ó¸ÇÀ¸·Î º¸¿©ÁÖ´Â ÄÚµå  // ÇÔ¼ö·Î º¯°æÇØ¾ßÇÒµí
-(mola)
-
-0_ESTIMATING_POSITION_temp : À§Ä¡ÃßÁ¤ ÄÚµå
-('txt2py_map_1_data_case5_for_map.txt','txt2py_map_2_data_case5_for_map.txt', module2,train_model3.ckpt-500)
-
-module2 : cell ³ª´©´Â ÄÚµå
-
-train_model3.ckpt-500 : save and restore, tensorboard ÀÚ·á
-
-ROUNDING : ÀÔ·Â ÁÂÇ¥ ´Ù·ç´Â ÇÔ¼ö
-
-ESTIMATINGSIGNAL : À§Ä¡¿¡ µû¸¥ ÇØ´çÇÏ´Â ¼¾¼­°ªµéÀ» ¸ÅÄªÇÏ´Â ÇÔ¼ö
-(ROUNDING, module2, 'txt2py_x_data_input_signal.txt', 'txt2py_y_data_input_position.txt')
-
-testing : input À§Ä¡¿¡ µû¸¥ ½ÅÈ£¼¼±â ½ÇÇàÄÚµå
-(ESTIMATINGSIGNAL)
-
-txt2py_y_data_input_position : input¿¡ µû¸¥ ¼öÁ¤À§Ä¡
-txt2py_x_data_input_signal : txt2py_y_data_input_position¿¡ µû¸¥ ½ÅÈ£¼¼±â
-
-ESTIMATING_POSITION_temp_for_inputing : ÇÔ¼ö, ÀÔ·Â = ¼ö½Å½ÅÈ£¼¼±â, Ãâ·Â°ª = ÁÂÇ¥
